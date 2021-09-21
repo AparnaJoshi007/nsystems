@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="task1.js"></script>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: #f1f1f1;
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            #regForm {
+                background-color: #fff;
+                margin: 100px auto;
+                padding: 40px;
+                width: 60%;
+                min-width: 400px;
+            }
+
+            .formHolder {
+                position: relative;
+            }
+
+            h1 {
+                text-align: center;  
+            }
+
+            .inputTab {
+                margin: 20px 0;
+            }
+
+            input {
+                padding: 10px;
+                width: 100%;
+                border: 1px solid #008dc8;
+                box-shadow: 0 0 0 4px #99d1e9;
+                outline: none;
+            }
+
+            /* Mark input boxes that gets an error on validation: */
+            input.invalid {
+                border: 1px solid #c33;
+                box-shadow: 0 0 0 4px #f5d6d6;
+            }
+
+            /* Hide all steps by default: */
+            .tab {
+                display: none;
+            }
+
+            button {
+                background-color: #00539f;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+            #prevBtn {
+                background-color: #bbb;
+                display: inline;
+            }
+
+            .stepHolder {
+                text-align: center;
+                margin-top: 60px;
+            }
+
+            .step {
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border: none;  
+                border-radius: 50%;
+                display: inline-block;
+                opacity: 0.5;
+            }
+
+            .step.active {
+                opacity: 1;
+                background-color: #00539f;
+            }
+
+            .buttons {
+                overflow: auto;
+            }
+
+            .btnHolder {
+                position: absolute;
+                right: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form id="regForm" action="#">
+            <div class="formHolder">
+                <h1>Registration form:</h1>
+                <div class="tab">
+                    <span>Full Name:</span>
+                    <div class="inputTab"><input placeholder="First Name" oninput="this.className = ''" name="fname"></div>
+                    <div class="inputTab"><input placeholder="Last Name" oninput="this.className = ''" name="lname"></div>
+                </div>
+                <div class="tab">
+                    <span>Contact Information:</span>
+                    <div class="inputTab"><input placeholder="E-mail" oninput="this.className = ''" name="email"></div>
+                    <div class="inputTab"><input placeholder="Phone" oninput="this.className = ''" name="phone"></div>
+                </div>
+                <div class="buttons">
+                    <div class="btnHolder">
+                        <button type="button" id="prevBtn" onclick="switchTabs(-1)">Previous</button>
+                        <button type="button" id="nextBtn" onclick="switchTabs(1)">Next</button>
+                    </div>
+                </div>
+                <div class="stepHolder">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
